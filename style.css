@@ -321,16 +321,16 @@ span{
         content: 'a Student';
     }
     21%, 40%{
-        content: 'an AI Enthusiast';
+        content: 'an Engineer';
     }
     41%, 60%{
-        content: 'a Researcher';
-    }
-    61%, 80%{
         content: 'an Artist';
     }
+    61%, 80%{
+        content: 'a Researcher';
+    }
     81%, 100%{
-        content: 'an Innovator';
+        content: 'an AI Enthusiast';
     }
 }
 @keyframes typing{
