@@ -84,7 +84,38 @@ themeSelector.addEventListener('change', function() {
             break;
     }
 });
+// Function to change image based on the theme
+function changeProfileImage(theme) {
+    const profileImage = document.querySelector('.home-img img');
+    switch (theme) {
+        case 'theme-pink':
+            profileImage.src = 'images/profile/pink.png';
+            break;
+        case 'theme-lavender':
+            profileImage.src = 'images/profile/lavender.png';
+            break;
+        case 'theme-aqua':
+            profileImage.src = 'images/profile/aqua.png';
+            break;
+        case 'theme-fire':
+            profileImage.src = 'images/profile/fire.png';
+            break;
+        case 'theme-sunset':
+            profileImage.src = 'images/profile/sunset.png';
+            break;
+        default:
+            profileImage.src = 'images/profile/mono.png';
+            break;
+    }
+}
 
+// Attach this function to the theme selector change event
+themeSelector.addEventListener('change', function() {
+    document.body.className = '';
+    const value = this.value;
+    changeProfileImage(value);
+    document.body.classList.add(value);
+});
 
 
 document.addEventListener('DOMContentLoaded', function() {

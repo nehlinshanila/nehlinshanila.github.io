@@ -113,37 +113,6 @@
     background-color: #ff8c52;
 }
 
-/* profile pics */
-
-/* Default Theme */
-.default .home-img img {
-    content: url('images/profile/mono.png');
-}
-
-/* Pink Theme */
-.theme-3 .home-img img {
-    content: url('images/profile/pink.png');
-}
-
-/* Lavender Theme */
-.theme-4 .home-img img {
-    content: url('images/profile/lavender.png');
-}
-
-/* Aqua Theme */
-.theme-5 .home-img img {
-    content: url('images/profile/aqua.png');
-}
-
-/* Fire Theme */
-.theme-6 .home-img img {
-    content: url('images/profile/fire.png');
-}
-
-/* Sunset Theme */
-.theme-7 .home-img img {
-    content: url('images/profile/sunset.png');
-}
 
 
 html{
