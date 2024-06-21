@@ -1,11 +1,13 @@
+// DOM elements
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
 let h2Elements = document.querySelectorAll('h2');
-let themeSelector = document.querySelector('#theme-selector'); // Access the theme selector
-let profileImage = document.querySelector('.home-img img'); // Access the profile image element
+let themeSelector = document.querySelector('.dropdown-selector'); // Modified for custom dropdown
+let dropdownMenu = document.querySelector('.dropdown-menu'); // Dropdown menu for themes
 
+// Function to check if an element is in view
 function isElementInView(element) {
     const rect = element.getBoundingClientRect();
     return (
@@ -14,19 +16,21 @@ function isElementInView(element) {
     );
 }
 
+// Typewriter effect function
 function typeWriter(element, text) {
     let index = 0;
-    element.innerHTML = '';
+    element.innerHTML = '';  // Clear the element before typing
     function type() {
         if (index < text.length) {
             element.textContent += text.charAt(index);
             index++;
-            setTimeout(type, 100); // Adjust typing speed
+            setTimeout(type, 100);  // Adjust typing speed
         }
     }
     type();
 }
 
+// Scroll event to activate link and type effect
 window.addEventListener('scroll', () => {
     sections.forEach(sec => {
         let top = window.scrollY;
@@ -37,7 +41,7 @@ window.addEventListener('scroll', () => {
         if (top >= offset && top < offset + height) {
             navLinks.forEach(links => {
                 links.classList.remove('active');
-                document.querySelector(`header nav a[href*="${id}"]`)?.classList.add('active');
+                document.querySelector(`header nav a[href*="${id}"]`).classList.add('active');
             });
 
             h2Elements.forEach(h2 => {
@@ -50,18 +54,23 @@ window.addEventListener('scroll', () => {
     });
 });
 
+// Menu icon click event to toggle menu visibility
 menuIcon.onclick = () => {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
 };
 
-themeSelector.addEventListener('change', function() {
-    let themeValue = this.value;
-    // Remove all theme-specific classes
-    document.body.classList.remove('theme-3', 'theme-4', 'theme-5', 'theme-6', 'theme-7');
-    
-    // Apply new theme class and update profile image
-    switch(themeValue) {
+// Function to toggle dropdown visibility
+function toggleDropdown() {
+    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+}
+
+// Function to apply the selected theme
+function applyTheme(theme) {
+    const profileImage = document.querySelector('.home-img img');
+    document.body.className = ''; // Remove all theme-specific classes
+
+    switch(theme) {
         case 'theme-pink':
             document.body.classList.add('theme-3');
             profileImage.src = 'images/profile/pink.png';
@@ -84,12 +93,31 @@ themeSelector.addEventListener('change', function() {
             break;
         default:
             profileImage.src = 'images/profile/mono.png'; // Default image
-            break;
+    }
+}
+
+// Click event for the dropdown selector
+themeSelector.addEventListener('click', toggleDropdown);
+
+// Click events for each dropdown item
+document.querySelectorAll('.dropdown-item').forEach(item => {
+    item.addEventListener('click', function() {
+        themeSelector.textContent = this.textContent; // Update the dropdown selector text
+        applyTheme(this.getAttribute('data-value')); // Apply theme
+        toggleDropdown(); // Close the dropdown
+    });
+});
+
+// Click outside to close the dropdown
+window.addEventListener('click', function(event) {
+    if (!themeSelector.contains(event.target) && !dropdownMenu.contains(event.target)) {
+        dropdownMenu.style.display = 'none';
     }
 });
 
+// Initialize EmailJS and handle form submissions
 document.addEventListener('DOMContentLoaded', function() {
-    emailjs.init("QZOJRKxe8bpIiTHPV");
+    emailjs.init("QZOJRKxe8bpIiTHPV"); // Replace this with your actual user ID
 
     document.getElementById('contact-form').addEventListener('submit', function(event) {
         event.preventDefault();

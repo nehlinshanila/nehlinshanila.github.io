@@ -12,10 +12,9 @@
 
 :root {
     --bg-color: #080808;
-    --text-color: rgb(123, 123, 123);
-    --main-color: #ffffff;
+    --text-color:white;
+    --main-color: rgb(139, 139, 139);
     --second-bg-color: #212121;
-    --default-text-color: white;
 }
 /* pink theme */
 .theme-3 {
@@ -62,55 +61,75 @@
 }
 
 
-/* theme selector */
-.select-container {
-    display: flex;
-    justify-content: center;
-    margin: 20px;
+.dropdown {
+    position: relative;
+    width: 150px;  /* Adjust width as needed */
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
 }
 
-
-#theme-selector {
+.dropdown-selector {
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: var(--main-color);
+    text-align: center;
     box-shadow: 0 0 5px var(--main-color), 0 0 15px var(--main-color), 0 0 100px var(--main-color);
-    background-color: var(--main-color); 
-    color: black; 
-    padding: 5px; 
-    border-radius: 10px; 
-    font-size: 16px; 
-    cursor: pointer; 
-    font-weight: bold; 
-    text-align-last: center;
+    user-select: none;
+    width: 100%; /* Ensures the selector does not exceed the dropdown width */
 }
-/* Style the dropdown options */
-#theme-selector option {
-    font-size: 20px; /* Font size */
-    text-align: center; /* Center align the text */
-    color: white; /* Text color for options */
-    padding: auto;
+.dropdown-selector:hover{
+    background-color: var(--second-bg-color);
+}
+.dropdown-menu {
+    position: absolute;
+    width: 100%;  /* Ensures the menu does not exceed the dropdown width */
+    display: none;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1000;
+    background: #333; /* Consistent background */
+    overflow: hidden; /* Prevents content from spilling out */
 }
 
-/* Ensure options have different background colors */
-#theme-selector option[value="default"] {
-    background-color: #000000;
+.dropdown-item {
+    padding: 10px;
+    text-align: center;
+    color: white;
+    transition: background-color 0.3s, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for multiple properties */
+    cursor: pointer;
+    display: block; /* Ensures full width and better control for transform */
+    margin: 5px 0; /* Add some space between items */
 }
-#theme-selector option[value="theme-pink"] {
+.dropdown-item[data-value="theme-pink"]:hover {
     background-color: #ff2893;
+    transform: scale(1.05); /* Slightly increase size */
+    box-shadow: 0 2px 10px rgba(255, 40, 147, 0.5); 
 }
-
-#theme-selector option[value="theme-lavender"] {
+.dropdown-item[data-value="theme-lavender"]:hover {
     background-color: #bc65ff;
+    transform: scale(1.05);
+    box-shadow: 0 2px 10px rgba(188, 101, 255, 0.5);
 }
-
-#theme-selector option[value="theme-aqua"] {
+.dropdown-item[data-value="theme-aqua"]:hover {
     background-color: #00ffee;
+    transform: scale(1.05);
+    box-shadow: 0 2px 10px rgba(0, 255, 238, 0.5); 
 }
-
-#theme-selector option[value="theme-fire"] {
+.dropdown-item[data-value="theme-fire"]:hover {
     background-color: #b10000;
+    transform: scale(1.05);
+    box-shadow: 0 2px 10px rgba(177, 0, 0, 0.5); 
 }
-
-#theme-selector option[value="theme-sunset"] {
+.dropdown-item[data-value="theme-sunset"]:hover {
     background-color: #ff8c52;
+    transform: scale(1.05);
+    box-shadow: 0 2px 10px rgba(255, 140, 82, 0.5);
+}
+.dropdown-item[data-value="default"]:hover {
+    background-color: #000000;
+    transform: scale(1.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); 
 }
 
 
@@ -221,7 +240,6 @@ span{
     width: 32vw;
     border-radius: 50%;
     border: 0.2rem solid var(--main-color);
-
     box-shadow: 0 0 25px var(--main-color);
     cursor: pointer;
     transition: 0.4s ease-in-out;
@@ -859,6 +877,12 @@ h3{
 }
 
 /* certifications */
+.gallery3 {
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
 .gallery-track3 {
     display: flex;
     width: calc(300px * 12); /* 6 items, doubled for seamless scrolling */
@@ -866,16 +890,17 @@ h3{
 }
 .gallery-item1 {
     position: relative;
-    border: 0.1px solid var(--main-color);
-    width: 400px;
+    border: 1.5px solid var(--main-color);
+    width: 100%;
     height: 170px;
-    margin: 20px;
+    margin: 20px auto;
     background-size: cover;
     background-position: center;
     transition: transform 0.3s ease; 
     /* dark tint */
     background-blend-mode: darken;
     background-color: rgba(0, 0, 0, 0.8); /* Dark tint color */
+    
 }
 .gallery-item1 img {
     width: 100%;
@@ -1074,12 +1099,10 @@ body {
 
 
 
-
-
 @media(max-width:991px){
     .home-content h1{
         text-align: center;
-        font-size: 5rem;
+        font-size: 4rem;
     }
     .home-content h3{
         font-size: 3rem;
@@ -1120,8 +1143,8 @@ body {
         left: 5px;
     }
     .timeline-item:nth-child(odd), .timeline-item:nth-child(even) {
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
     .timeline-dot {
         left: -8px;
@@ -1134,7 +1157,7 @@ body {
     .timeline-content ul {
         font-size: 12px;
         line-height: 18px;
-        margin: 0.2rem;
+        margin: 0.5rem;
     }
     .services{
         padding-bottom: 7rem;
@@ -1144,10 +1167,14 @@ body {
     }
     .skills-container {
         display: inline-block;
+
     }
+
     .language-bars, .framework-bars, .database-bars {
         padding: 3rem;
         gap: 10px;
+        max-width: 300px;
+
     }
     .contact form{
         flex-direction: column;
@@ -1194,6 +1221,16 @@ body {
 
 }
 @media (max-width: 768px) {
+    .social-icons a {
+        width: 3rem;
+        height: 3rem;
+        margin: 0.5rem;
+        font-size: 1.5rem;
+    }
+
+    .home-img img {
+        width: 50vw;
+    }
     
     .clubs-container {
         flex-direction: column;
@@ -1230,5 +1267,25 @@ body {
     section{
         padding: 4rem 3% 2rem;
     }
-    
+
+    .skills-container {
+        max-width: 100%;
+    }
+
+    .language-bars, .framework-bars, .database-bars {
+        max-width: 100%;
+        padding: 2rem;
+    }
+    .social-icons {
+        justify-content: center;
+        padding: 1rem 0;
+    }
+    .footer .social {
+        justify-content: center;
+        padding: 1rem 0;
+    }
+
+    .home-img img {
+        width: 50vw;
+    }
 }

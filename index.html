@@ -30,15 +30,16 @@
             <a href="#contact">Contact</a>
         </nav>
         
-        <div class="select-container">
-            <select id="theme-selector">
-                <option value="default">THEMES</option>
-                <option value="theme-pink">PINK</option>
-                <option value="theme-lavender">LAVENDER</option>
-                <option value="theme-aqua">AQUA</option>
-                <option value="theme-fire">FIRE</option>
-                <option value="theme-sunset">SUNSET</option>
-            </select>
+        <div class="dropdown">
+            <div class="dropdown-selector" id="theme-selector">Select Theme</div>
+            <div class="dropdown-menu">
+                <div class="dropdown-item" data-value="theme-pink">Pink</div>
+                <div class="dropdown-item" data-value="theme-lavender">Lavender</div>
+                <div class="dropdown-item" data-value="theme-aqua">Aqua</div>
+                <div class="dropdown-item" data-value="theme-fire">Fire</div>
+                <div class="dropdown-item" data-value="theme-sunset">Sunset</div>
+                <div class="dropdown-item" data-value="default">Monochrome</div>
+            </div>
         </div>
     </header>
 
@@ -152,136 +153,137 @@
 
     <section class="skills" id="skills">
         <h2 class="heading">Skills</h2>
-        <div class="skills-container">
-                    <div class="language-bars">
-                    <!-- C++ -->
-                    <div class="bar">
-                        <div class="progress-line cpp"><span></span></div>
-                        <div class="info">
-                            <span>C++</span>
-                        </div>
+            <div class="skills-container">
+                <div class="language-bars">
+                <!-- C++ -->
+                <div class="bar">
+                    <div class="progress-line cpp"><span></span></div>
+                    <div class="info">
+                        <span>C++</span>
                     </div>
-                    <!-- PYTHON -->
-                    <div class="bar">
-                        <div class="progress-line python"><span></span></div>
-                        <div class="info">
-                            <span>PYTHON</span>
-                        </div>
-                    </div>
-                    <!-- HTML -->
-                    <div class="bar">
-                        <div class="progress-line html"><span></span></div>
-                        <div class="info">
-                            <span>HTML</span>
-                        </div>
-                    </div>
-                    <!-- CSS -->
-                    <div class="bar">
-                        <div class="progress-line css"><span></span></div>
-                        <div class="info">
-                            <span>CSS</span>
-                        </div>
-                    </div>
-                    <!-- JAVA -->
-                    <div class="bar">
-                        <div class="progress-line java"><span></span></div>
-                        <div class="info">
-                            <span>JAVA</span>
-                        </div>
-                    </div>
-                    <!-- C -->
-                    <div class="bar">
-                        <div class="progress-line c"><span></span></div>
-                        <div class="info">
-                            <span>C</span>
-                        </div>
-                    </div>
-                    <!-- KOTLIN -->
-                    <div class="bar">
-                        <div class="progress-line kotlin"><span></span></div>
-                        <div class="info">
-                            <span>KOTLIN</span>
-                        </div>
-                    </div>
-                    <!-- JAVASCRIPT -->
-                    <div class="bar">
-                        <div class="progress-line javascript"><span></span></div>
-                        <div class="info">
-                            <span>JAVASCRIPT</span>
-                        </div>
-                    </div>
-                    <!-- PHP -->
-                    <div class="bar">
-                        <div class="progress-line php"><span></span></div>
-                        <div class="info">
-                            <span>PHP</span>
-                        </div>
-                    </div>            
                 </div>
+                <!-- PYTHON -->
+                <div class="bar">
+                    <div class="progress-line python"><span></span></div>
+                    <div class="info">
+                        <span>PYTHON</span>
+                    </div>
+                </div>
+                <!-- HTML -->
+                <div class="bar">
+                    <div class="progress-line html"><span></span></div>
+                    <div class="info">
+                        <span>HTML</span>
+                    </div>
+                </div>
+                <!-- CSS -->
+                <div class="bar">
+                    <div class="progress-line css"><span></span></div>
+                    <div class="info">
+                        <span>CSS</span>
+                    </div>
+                </div>
+                <!-- JAVA -->
+                <div class="bar">
+                    <div class="progress-line java"><span></span></div>
+                    <div class="info">
+                        <span>JAVA</span>
+                    </div>
+                </div>
+                <!-- C -->
+                <div class="bar">
+                    <div class="progress-line c"><span></span></div>
+                    <div class="info">
+                        <span>C</span>
+                    </div>
+                </div>
+                <!-- KOTLIN -->
+                <div class="bar">
+                    <div class="progress-line kotlin"><span></span></div>
+                    <div class="info">
+                        <span>KOTLIN</span>
+                    </div>
+                </div>
+                <!-- JAVASCRIPT -->
+                <div class="bar">
+                    <div class="progress-line javascript"><span></span></div>
+                    <div class="info">
+                        <span>JAVASCRIPT</span>
+                    </div>
+                </div>
+                <!-- PHP -->
+                <div class="bar">
+                    <div class="progress-line php"><span></span></div>
+                    <div class="info">
+                        <span>PHP</span>
+                    </div>
+                </div>            
+            </div>
 
-                <div class="framework-bars">
-                    <!-- React.js -->
-                    <div class="bar">
-                        <div class="progress-line reactjs"><span></span></div>
-                        <div class="info">
-                            <span>REACT.JS</span>
-                        </div>
-                    </div>
-                    <!-- Pytorch -->
-                    <div class="bar">
-                        <div class="progress-line pytorch"><span></span></div>
-                        <div class="info">
-                            <span>PYTORCH</span>
-                        </div>
-                    </div>
-                    <!-- Three.Js -->
-                    <div class="bar">
-                        <div class="progress-line threejs"><span></span></div>
-                        <div class="info">
-                            <span>THREE.JS</span>
-                        </div>
-                    </div>
-                    <!-- Tensorflow -->
-                    <div class="bar">
-                        <div class="progress-line tensorflow"><span></span></div>
-                        <div class="info">
-                            <span>TENSORFLOW</span>
-                        </div>
-                    </div>
-                    <!-- React.native -->
-                    <div class="bar">
-                        <div class="progress-line reactnative"><span></span></div>
-                        <div class="info">
-                            <span>REACT.NATIVE</span>
-                        </div>
-                    </div>
-                    <!-- Django -->
-                    <div class="bar">
-                        <div class="progress-line django"><span></span></div>
-                        <div class="info">
-                            <span>DJANGO</span>
-                        </div>
+            <div class="framework-bars">
+                <!-- React.js -->
+                <div class="bar">
+                    <div class="progress-line reactjs"><span></span></div>
+                    <div class="info">
+                        <span>REACT.JS</span>
                     </div>
                 </div>
+                <!-- Pytorch -->
+                <div class="bar">
+                    <div class="progress-line pytorch"><span></span></div>
+                    <div class="info">
+                        <span>PYTORCH</span>
+                    </div>
+                </div>
+                <!-- Three.Js -->
+                <div class="bar">
+                    <div class="progress-line threejs"><span></span></div>
+                    <div class="info">
+                        <span>THREE.JS</span>
+                    </div>
+                </div>
+                <!-- Tensorflow -->
+                <div class="bar">
+                    <div class="progress-line tensorflow"><span></span></div>
+                    <div class="info">
+                        <span>TENSORFLOW</span>
+                    </div>
+                </div>
+                <!-- React.native -->
+                <div class="bar">
+                    <div class="progress-line reactnative"><span></span></div>
+                    <div class="info">
+                        <span>REACT.NATIVE</span>
+                    </div>
+                </div>
+                <!-- Django -->
+                <div class="bar">
+                    <div class="progress-line django"><span></span></div>
+                    <div class="info">
+                        <span>DJANGO</span>
+                    </div>
+                </div>
+            </div>
 
-                <div class="database-bars">
-                    <!-- firebase -->
-                    <div class="bar">
-                        <div class="progress-line firebase"><span></span></div>
-                        <div class="info">
-                            <span>FIREBASE</span>
-                        </div>
-                    </div>
-                    <!-- AWS -->
-                    <div class="bar">
-                        <div class="progress-line aws"><span></span></div>
-                        <div class="info">
-                            <span>AWS</span>
-                        </div>
+            <div class="database-bars">
+                <!-- firebase -->
+                <div class="bar">
+                    <div class="progress-line firebase"><span></span></div>
+                    <div class="info">
+                        <span>FIREBASE</span>
                     </div>
                 </div>
+                <!-- AWS -->
+                <div class="bar">
+                    <div class="progress-line aws"><span></span></div>
+                    <div class="info">
+                        <span>AWS</span>
+                    </div>
+                </div>
+            </div>
 
         </div>
+        
     </section>
 
 
@@ -524,9 +526,9 @@
             </div>
         </div>
     </div>
-
-
     <a href="https://www.linkedin.com/in/nehlinshanila/details/certifications/"><h3>Certifications <i class='bx bx-award' ></i></h3></a>
+
+<div class="gallery3">
     <div class="gallery-track3">
         <div class="gallery-item1" style="background-image: url('images/certificates/artaward.png');">
             <div class="caption">Certificate of accomplishment for the third position in the Art competition</div>
@@ -562,6 +564,8 @@
             <div class="caption">Certificate of commitment and contribution at Habitat for Humanity</div>
         </div>
     </div>
+</div>
+    
     
 
 
@@ -603,21 +607,6 @@
             <a href="https://www.chess.com/member/nehlins"><i class='bx bxs-chess'></i></a>
         </div>
         <ul class="list">
-            <li>
-                <a href="#">FAQ</a>
-            </li>
-            <li>
-                <a href="#">Services</a>
-            </li>
-            <li>
-                <a href="#">About me</a>
-            </li>
-            <li>
-                <a href="#">Contact</a>
-            </li>
-            <li>
-                <a href="#">Privacy Policy</a>
-            </li>
             <p class="copyright">
                 @copyright Shanila Nehlin | All Rights Reserved
             </p>
