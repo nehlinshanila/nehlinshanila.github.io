@@ -14,6 +14,7 @@
     --bg-color: #080808;
     --text-color:white;
     --main-color: rgb(139, 139, 139);
+    --main-color-opacity: rgba(139, 139, 139, 0.296); /* 50% opacity */
     --second-bg-color: #212121;
 }
 /* pink theme */
@@ -21,6 +22,7 @@
     --bg-color: #080808;
     --text-color: rgba(255,255,255);
     --main-color: #ff2893;
+    --main-color-opacity: rgba(139, 139, 139, 0.296); /* 50% opacity */
     --second-bg-color: #160b16;
     --default-text-color: white;
 }
@@ -29,15 +31,17 @@
     --bg-color: #080808;
     --text-color: rgba(255,255,255);
     --main-color: #bc65ff;
+    --main-color-opacity: rgba(139, 139, 139, 0.296); /* 50% opacity */
     --second-bg-color: #140d1c;
     --default-text-color: white;
 }
 
-/* Turquoise Theme */
+/* aqua Theme */
 .theme-5 {
     --bg-color: #080808;
     --text-color: rgba(255,255,255);
     --main-color: #00ffee;
+    --main-color-opacity: rgba(139, 139, 139, 0.296); /* 50% opacity */
     --second-bg-color: #0b1012;
     --default-text-color: white;
 }
@@ -47,6 +51,7 @@
     --bg-color: #080808;
     --text-color: rgba(255,255,255);
     --main-color: #ff0000;
+    --main-color-opacity: rgba(139, 139, 139, 0.296); /* 50% opacity */
     --second-bg-color: #150000;
     --default-text-color: white;
 }
@@ -56,6 +61,7 @@
     --bg-color: #080808;
     --text-color: rgba(255,255,255);
     --main-color: #ff8c52;
+    --main-color-opacity:rgba(139, 139, 139, 0.296); /* 50% opacity */
     --second-bg-color: #160b00;
     --default-text-color: white;
 }
@@ -565,7 +571,7 @@ span{
 .progress-line {
     height: 10px; /* Thickness of the progress bar */
     width: 25rem; /* Adjust based on preference */
-    background: grey; /* Default background */
+    background: var(--main-color-opacity); /* Background with 50% opacity */
     position: relative;
     border-radius: 5px;
     
